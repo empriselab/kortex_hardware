@@ -16,7 +16,7 @@ This hardware interface provides the following features:
 Following are the external API and library requirements for using this hardware interface.
 * Kortex API (read robot state and send commands to the robot)
 * Pinocchio (for gravity compensation when using effort control)
-* kortex_description (ROS package for containing Gen3 URDF and xacro files, also required for gravity compensation)
+* kortex_description (ROS package containing Gen3 URDF and xacro files, also required for gravity compensation)
 * Boost and Eigen (base dependencies)
 
 ## Installation
