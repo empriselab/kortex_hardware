@@ -27,6 +27,8 @@ Assuming existing ROS1 installation, we additionally require Pinocchio for gravi
 
 **Note**: Some users encounter Eigen-related errors using this error. For such cases, we additionally suggest using their [official documentation](https://stack-of-tasks.github.io/pinocchio/download.html).
 
+If you are interested in testing the interface with ROS controllers, you also need to run `sudo apt install ros-$ROS_DISTRO-ros-controllers`.
+
 ## Usage
 
 One can use this package as the hardware interface package for the Gen3 robot provided the appropriate URDF files. 
@@ -60,7 +62,7 @@ rosrun kortex_hardware test_modes.py velocity # <position/velocity/effort/stop>
 
 Command: <enter joint value> # in radians
 DOF: <specify joint number between 1-NDOF>
-# Ctrl + C to exit
+# Ctrl + \ to exit
 ```
 
 **Note**: when switching to position mode for the first time, the robot moves to the candlestick position.
