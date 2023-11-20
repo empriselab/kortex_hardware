@@ -6,10 +6,10 @@ This repository provides a `ros_control` (ROS1) hardware interface for the Kinov
 ## Main Features
 
 This hardware interface provides the following features:
-* Read/write capabilities for joint positions, velocities, and effort for the Gen3 arm. For position and velocity control, we currently support high-level servoing mode which runs at 40Hz. We provide support for effort (torque/control) control using the low-level servoing mode of the robot which runs at 1KHz.
+* Read/write capabilities for joint positions, velocities, and effort for the Gen3 arm. For position and velocity control, we currently support high-level servoing mode, which runs at 40Hz. We provide support for effort (torque/control) control using the low-level servoing mode of the robot, which runs at 1KHz.
 * Read/write capabilities for the Robotiq-2f-85 gripper using Kortex API. The servoing level depends on the servoing mode for the arm.
 * ROS service for switching between different control modes. (This can also be accomplished using joint mode controllers)
-* Software E-Stop mode that puts the robot in effort mode and performs gravity compenstation, allowing users to easily move the arm to the desired position.
+* Software E-Stop mode that puts the robot in effort mode and performs gravity compensation, allowing users to easily move the arm to the desired position.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Following are the external API and library requirements for using this hardware 
 
 ## Installation
 
-Assuming existing ROS1 installation, we additionally require Pinocchio for gravity compensation at hardware interface level. Pinocchio officialy recommends installing the binaries via the ROS PPA when using it with ROS packages using: 
+Assuming ROS1 is already installed, we additionally require Pinocchio for gravity compensation at the hardware interface level. Pinocchio officially recommends installing the binaries via the ROS PPA when using it with ROS packages using: 
 
 ```sudo apt install ros-$ROS_DISTRO-pinocchio```
 
@@ -47,7 +47,7 @@ cd .. && catkin build
 
 ```
 
-Before you start using the hardware interface, make sure to have the connection details including the IP address for your robot. It is preferred to have the robot and the system running ROS on the same network and connected via ethernet (especially important for torque control). For safety purpose, **make sure to have the e-stop next to you when testing.**
+Before you start using the hardware interface, make sure to have the connection details, including the IP address for your robot. It is preferred to have the robot and the system running ROS on the same network and connected via ethernet (especially important for torque control). For safety purposes, **make sure to have the e-stop next to you when testing.**
 
 Running instructions for testing the hardware interface:
 ```
@@ -67,10 +67,10 @@ DOF: <specify joint number between 1-NDOF>
 
 **Note**: when switching to position mode for the first time, the robot moves to the candlestick position.
 
-In case you are not able to connect to the robot or unable to command it, it is always handy to use the Kinova Web App to check for connection and clearing any faults.
+In case you are not able to connect to the robot or are unable to command it, it is always handy to use the Kinova Web App to check for connection and clear any faults.
 
 ## Contribution
-Any contributions related to bugfixes/feature additions/documentation are welcome! Contributing is simple. Just follow the following steps:
+Any contributions related to bug fixes/feature additions/documentation are welcome! Contributing is simple. Just follow the following steps:
 * Fork the repository
 * Create a new branch with an appropriate name
 * Make changes, test, and commit
