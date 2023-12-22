@@ -36,7 +36,7 @@ void addGravityCompensation(
 {
   Eigen::VectorXd q = pinocchio::neutral(model);
   // convert ROS joint config to pinocchio config
-  for (int i = 0; i < model.joints.size(); i++)
+  for (int i = 0; i < model.nv; i++)
   {
     int jidx = model.getJointId(model.names[i + 1]);
     int qidx = model.idx_qs[jidx];
@@ -55,7 +55,7 @@ void addGravityCompensation(
   Eigen::VectorXd gravity
       = pinocchio::computeGeneralizedGravity(model, data, q);
   // add gravity compensation torque to base command
-  for (int i = 0; i < gravity.size(); i++)
+  for (int i = 0; i < model.nv; i++)
   {
     command[i] = command[i] + gravity[i];
   }
